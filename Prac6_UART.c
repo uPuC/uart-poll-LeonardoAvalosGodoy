@@ -1,5 +1,10 @@
 #include <avr/io.h>
-#include “UART.h”
+#include "UART.h"
+
+
+#define YELLOW 3
+#define GREEN  2
+#define BLUE   4
 
 int main( void )
 {
@@ -17,13 +22,13 @@ int main( void )
 
         UART_gotoxy(0,2,2);
         UART_setColor(0,YELLOW);
-        UART_puts(0,"Introduce un número:");
+        UART_puts(0,"Introduce un numero:");
         
         UART_gotoxy(0,22,2);
         UART_setColor(0,GREEN);
         UART_gets(0,cad);
 // -------------------------------------------
-        // Cycle through UART2->UART3
+
         UART_puts(2,cad);
         UART_puts(2,"\r");
         UART_gets(3,cadUart3);
@@ -44,3 +49,4 @@ int main( void )
         UART_puts(0,cad);
     }
 }
+
